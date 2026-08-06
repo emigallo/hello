@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Delivery pipeline">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #E8E7E2; }
+    .t-title { font-size: 14px; font-weight: bold; }
+    .t-normal { font-size: 12px; }
+    .t-package { font-size: 12px; font-weight: bold; }
+    .box { fill: none; stroke: #E8E7E2; stroke-width: 1; }
+    .arrow { stroke: #B8B6B0; stroke-width: 1; fill: none; }
+    .fork-bar { stroke: #E8E7E2; stroke-width: 3; fill: none; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B8B6B0"/>
+    </marker>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10">
+      <circle cx="5" cy="5" r="4" fill="#E8E7E2"/>
+    </marker>
+  </defs>
+
+  <text class="t-title" x="450" y="30" text-anchor="middle">Deployment pipeline</text>
+
+  <!-- Start dot -->
+  <circle cx="450" cy="60" r="8" fill="#E8E7E2"/>
+  <line class="arrow" x1="450" y1="68" x2="450" y2="95" marker-end="url(#arr)"/>
+
+  <!-- Commit stage container -->
+  <path class="box" d="M 280 100 L 400 100 L 410 90 L 420 100 L 620 100 L 620 240 L 280 240 Z"/>
+  <text class="t-package" x="300" y="120">Commit stage</text>
+
+  <rect class="box" x="310" y="135" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="160" text-anchor="middle">push or pull request to dev</text>
+
+  <line class="arrow" x1="450" y1="175" x2="450" y2="190" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="190" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="207" text-anchor="middle">unit, component, guillotine</text>
+  <text class="t-normal" x="450" y="222" text-anchor="middle">and audit tests</text>
+
+  <line class="arrow" x1="450" y1="240" x2="450" y2="270" marker-end="url(#arr)"/>
+
+  <!-- Acceptance stage container -->
+  <path class="box" d="M 40 275 L 160 275 L 170 265 L 180 275 L 860 275 L 860 830 L 40 830 Z"/>
+  <text class="t-package" x="60" y="295">Acceptance stage</text>
+
+  <rect class="box" x="310" y="315" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="340" text-anchor="middle">tag vX.Y.Z pushed</text>
+
+  <line class="arrow" x1="450" y1="355" x2="450" y2="370" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="370" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="395" text-anchor="middle">validate the tag comes from dev</text>
+
+  <line class="arrow" x1="450" y1="410" x2="450" y2="425" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="425" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="450" text-anchor="middle">acceptance and integration tests</text>
+
+  <line class="arrow" x1="450" y1="465" x2="450" y2="490"/>
+
+  <!-- Fork bar -->
+  <line class="fork-bar" x1="80" y1="490" x2="820" y2="490"/>
+
+  <!-- 5 parallel builds -->
+  <line class="arrow" x1="110" y1="490" x2="110" y2="510"/>
+  <rect class="box" x="55" y="510" width="110" height="40" rx="20"/>
+  <text class="t-normal" x="110" y="535" text-anchor="middle">build App</text>
+
+  <line class="arrow" x1="245" y1="490" x2="245" y2="510"/>
+  <rect class="box" x="190" y="510" width="110" height="40" rx="20"/>
+  <text class="t-normal" x="245" y="535" text-anchor="middle">build Api</text>
+
+  <line class="arrow" x1="380" y1="490" x2="380" y2="510"/>
+  <rect class="box" x="315" y="510" width="130" height="40" rx="20"/>
+  <text class="t-normal" x="380" y="535" text-anchor="middle">build Api.Sap</text>
+
+  <line class="arrow" x1="530" y1="490" x2="530" y2="510"/>
+  <rect class="box" x="460" y="510" width="140" height="40" rx="20"/>
+  <text class="t-normal" x="530" y="535" text-anchor="middle">build Automation</text>
+
+  <line class="arrow" x1="700" y1="490" x2="700" y2="510"/>
+  <rect class="box" x="615" y="510" width="170" height="40" rx="20"/>
+  <text class="t-normal" x="700" y="530" text-anchor="middle">publish Common and</text>
+  <text class="t-normal" x="700" y="545" text-anchor="middle">Model to NuGet</text>
+
+  <!-- Down from parallel builds -->
+  <line class="arrow" x1="110" y1="550" x2="110" y2="570"/>
+  <line class="arrow" x1="245" y1="550" x2="245" y2="570"/>
+  <line class="arrow" x1="380" y1="550" x2="380" y2="570"/>
+  <line class="arrow" x1="530" y1="550" x2="530" y2="570"/>
+  <line class="arrow" x1="700" y1="550" x2="700" y2="570"/>
+
+  <!-- Join bar -->
+  <line class="fork-bar" x1="80" y1="570" x2="820" y2="570"/>
+
+  <line class="arrow" x1="450" y1="570" x2="450" y2="600" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="600" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="625" text-anchor="middle">store artifacts under &lt;version&gt;</text>
+
+  <line class="arrow" x1="450" y1="640" x2="450" y2="655" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="655" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="680" text-anchor="middle">deploy to QA</text>
+
+  <line class="arrow" x1="450" y1="695" x2="450" y2="710" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="710" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="735" text-anchor="middle">smoke tests</text>
+
+  <line class="arrow" x1="450" y1="750" x2="450" y2="765" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="765" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="790" text-anchor="middle">release note draft</text>
+
+  <line class="arrow" x1="450" y1="830" x2="450" y2="860" marker-end="url(#arr)"/>
+
+  <!-- Production container -->
+  <path class="box" d="M 280 865 L 400 865 L 410 855 L 420 865 L 620 865 L 620 1050 L 280 1050 Z"/>
+  <text class="t-package" x="300" y="885">Production</text>
+
+  <rect class="box" x="310" y="900" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="917" text-anchor="middle">manual promotion of an</text>
+  <text class="t-normal" x="450" y="932" text-anchor="middle">existing version</text>
+
+  <line class="arrow" x1="450" y1="940" x2="450" y2="955" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="955" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="972" text-anchor="middle">deploy the same artifacts</text>
+  <text class="t-normal" x="450" y="987" text-anchor="middle">to production</text>
+
+  <line class="arrow" x1="450" y1="995" x2="450" y2="1010" marker-end="url(#arr)"/>
+
+  <rect class="box" x="310" y="1010" width="280" height="40" rx="20"/>
+  <text class="t-normal" x="450" y="1035" text-anchor="middle">tag prod-X.Y.Z and GitHub Release</text>
+
+  <!-- End dot -->
+  <circle cx="450" cy="1075" r="8" fill="#E8E7E2"/>
+  <circle cx="450" cy="1075" r="4" fill="#0F0F0E"/>
+</svg>

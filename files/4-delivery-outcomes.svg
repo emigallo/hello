@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img" aria-label="Delivery process outcomes">
+  <style>
+    text { font-family: 'Inter', Helvetica, Arial, sans-serif; }
+    .t-title { font-size: 16px; font-weight: 600; fill: #E8E7E2; }
+    .t-subtitle { font-size: 12px; fill: #B8B6B0; }
+    .t-label { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+    .t-metric { font-size: 24px; font-weight: 600; }
+    .t-detail { font-size: 12px; font-weight: 400; }
+    .t-note { font-size: 10px; font-style: italic; opacity: 0.7; }
+
+    /* GREEN card: deployment frequency */
+    .card-green { fill: #1F3315; stroke: #5C9A2E; stroke-width: 1; }
+    .green-label { fill: #C0DD97; }
+    .green-metric { fill: #DAEAC7; }
+    .green-detail { fill: #C0DD97; opacity: 0.85; }
+
+    /* BLUE card: bug rate */
+    .card-blue { fill: #1A2B42; stroke: #4A8AC9; stroke-width: 1; }
+    .blue-label { fill: #B5D4F4; }
+    .blue-metric { fill: #DCE9F5; }
+    .blue-detail { fill: #B5D4F4; opacity: 0.85; }
+
+    /* GRAY card: stability */
+    .card-gray { fill: #2E2E2A; stroke: #A8A6A0; stroke-width: 1; }
+    .gray-label { fill: #E8E7E2; }
+    .gray-metric { fill: #E8E7E2; }
+    .gray-detail { fill: #B8B6B0; }
+  </style>
+
+  <!-- Header -->
+  <text class="t-title" x="20" y="35">Delivery process outcomes</text>
+  <text class="t-subtitle" x="20" y="58">What the pipeline produced over the past year</text>
+
+  <!-- CARD 1: Deployment frequency (GREEN) -->
+  <rect class="card-green" x="20" y="90" width="280" height="230" rx="8"/>
+  <text class="t-label green-label" x="40" y="120">01 — Deployment frequency</text>
+  <text class="t-metric green-metric" x="40" y="175">1 / week</text>
+  <text class="t-metric green-detail" x="40" y="200" opacity="0.5">↓</text>
+  <text class="t-metric green-metric" x="40" y="235">2–3 / week</text>
+  <text class="t-detail green-detail" x="40" y="275">2× to 3× increase in delivery cadence</text>
+  <text class="t-detail green-detail" x="40" y="293">across the full ecosystem.</text>
+
+  <!-- CARD 2: Bug rate (BLUE) -->
+  <rect class="card-blue" x="310" y="90" width="280" height="230" rx="8"/>
+  <text class="t-label blue-label" x="330" y="120">02 — Bug rate reduction</text>
+  <text class="t-metric blue-metric" x="330" y="175">30–50%</text>
+  <text class="t-detail blue-detail" x="330" y="200">fewer bugs reaching production</text>
+  <text class="t-detail blue-detail" x="330" y="218">after each release.</text>
+  <text class="t-detail blue-detail" x="330" y="260">Enabled by the five-level test harness</text>
+  <text class="t-detail blue-detail" x="330" y="278">and automated smoke checks.</text>
+  <text class="t-note blue-detail" x="330" y="305">Estimated from team observation, not from a formal baseline.</text>
+
+  <!-- CARD 3: Deployment stability (GRAY) -->
+  <rect class="card-gray" x="600" y="90" width="280" height="230" rx="8"/>
+  <text class="t-label gray-label" x="620" y="120">03 — Deployment stability</text>
+  <text class="t-metric gray-metric" x="620" y="175">Full ecosystem</text>
+  <text class="t-metric gray-metric" x="620" y="203">deployed together</text>
+  <text class="t-detail gray-detail" x="620" y="245">Failures are rare because the same</text>
+  <text class="t-detail gray-detail" x="620" y="263">artifact is validated in QA and then</text>
+  <text class="t-detail gray-detail" x="620" y="281">promoted to production unchanged.</text>
+
+  <!-- Footer note -->
+  <text class="t-subtitle" x="20" y="360">Aligned with DORA framework: deployment frequency, change failure rate, and deployment reliability.</text>
+</svg>

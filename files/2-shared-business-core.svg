@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-label="Shared business core - Internal architecture">
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #E8E7E2; }
+    .t-title { font-size: 14px; font-weight: bold; }
+    .t-normal { font-size: 12px; }
+    .t-package { font-size: 12px; font-weight: bold; }
+    .box { fill: none; stroke: #E8E7E2; stroke-width: 1; }
+    .arrow { stroke: #B8B6B0; stroke-width: 1; fill: none; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B8B6B0"/>
+    </marker>
+  </defs>
+
+  <text class="t-title" x="500" y="30" text-anchor="middle">Shared business core</text>
+
+  <!-- CORE outer container -->
+  <path class="box" d="M 40 60 L 200 60 L 210 50 L 220 60 L 800 60 L 800 590 L 40 590 Z" />
+  <text class="t-package" x="60" y="80">Core</text>
+
+  <!-- Use cases -->
+  <path class="box" d="M 70 110 L 180 110 L 190 100 L 200 110 L 200 210 L 70 210 Z" />
+  <text class="t-package" x="90" y="130">Use cases</text>
+
+  <rect class="box" x="90" y="145" width="180" height="55" rx="4"/>
+  <text class="t-normal" x="180" y="168" text-anchor="middle">User action orchestration</text>
+  <text class="t-normal" x="180" y="188" text-anchor="middle">ApplicationBusinessRules</text>
+  <rect class="box" x="255" y="140" width="12" height="14"/>
+  <line x1="251" y1="143" x2="261" y2="143" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="251" y1="148" x2="261" y2="148" stroke="#E8E7E2" stroke-width="1"/>
+
+  <!-- Domain -->
+  <path class="box" d="M 70 240 L 180 240 L 190 230 L 200 240 L 200 400 L 70 400 Z" />
+  <text class="t-package" x="90" y="260">Domain</text>
+
+  <rect class="box" x="90" y="275" width="180" height="55" rx="4"/>
+  <text class="t-normal" x="180" y="298" text-anchor="middle">Domain services</text>
+  <text class="t-normal" x="180" y="318" text-anchor="middle">EnterpriseBusinessRules</text>
+  <rect class="box" x="255" y="270" width="12" height="14"/>
+  <line x1="251" y1="273" x2="261" y2="273" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="251" y1="278" x2="261" y2="278" stroke="#E8E7E2" stroke-width="1"/>
+
+  <rect class="box" x="290" y="275" width="180" height="55" rx="4"/>
+  <text class="t-normal" x="380" y="298" text-anchor="middle">Entities and business rules</text>
+  <text class="t-normal" x="380" y="318" text-anchor="middle">Model</text>
+  <rect class="box" x="455" y="270" width="12" height="14"/>
+  <line x1="451" y1="273" x2="461" y2="273" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="451" y1="278" x2="461" y2="278" stroke="#E8E7E2" stroke-width="1"/>
+
+  <rect class="box" x="490" y="275" width="180" height="55" rx="4"/>
+  <text class="t-normal" x="580" y="298" text-anchor="middle">Cutting optimization</text>
+  <text class="t-normal" x="580" y="318" text-anchor="middle">Guillotine</text>
+  <rect class="box" x="655" y="270" width="12" height="14"/>
+  <line x1="651" y1="273" x2="661" y2="273" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="651" y1="278" x2="661" y2="278" stroke="#E8E7E2" stroke-width="1"/>
+
+  <!-- Cross-cutting -->
+  <path class="box" d="M 70 430 L 180 430 L 190 420 L 200 430 L 200 570 L 70 570 Z" />
+  <text class="t-package" x="90" y="450">Cross-cutting</text>
+
+  <rect class="box" x="90" y="465" width="130" height="55" rx="4"/>
+  <text class="t-normal" x="155" y="488" text-anchor="middle">Context, factories, filters</text>
+  <text class="t-normal" x="155" y="508" text-anchor="middle">Manager</text>
+  <rect class="box" x="205" y="460" width="12" height="14"/>
+  <line x1="201" y1="463" x2="211" y2="463" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="201" y1="468" x2="211" y2="468" stroke="#E8E7E2" stroke-width="1"/>
+
+  <rect class="box" x="240" y="465" width="130" height="55" rx="4"/>
+  <text class="t-normal" x="305" y="488" text-anchor="middle">Utilities</text>
+  <text class="t-normal" x="305" y="508" text-anchor="middle">Common</text>
+  <rect class="box" x="355" y="460" width="12" height="14"/>
+  <line x1="351" y1="463" x2="361" y2="463" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="351" y1="468" x2="361" y2="468" stroke="#E8E7E2" stroke-width="1"/>
+
+  <rect class="box" x="390" y="465" width="130" height="55" rx="4"/>
+  <text class="t-normal" x="455" y="488" text-anchor="middle">Logging</text>
+  <text class="t-normal" x="455" y="508" text-anchor="middle">Diagnostic</text>
+  <rect class="box" x="505" y="460" width="12" height="14"/>
+  <line x1="501" y1="463" x2="511" y2="463" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="501" y1="468" x2="511" y2="468" stroke="#E8E7E2" stroke-width="1"/>
+
+  <rect class="box" x="540" y="465" width="130" height="55" rx="4"/>
+  <text class="t-normal" x="605" y="488" text-anchor="middle">Change tracking</text>
+  <text class="t-normal" x="605" y="508" text-anchor="middle">Audit</text>
+  <rect class="box" x="655" y="460" width="12" height="14"/>
+  <line x1="651" y1="463" x2="661" y2="463" stroke="#E8E7E2" stroke-width="1"/>
+  <line x1="651" y1="468" x2="661" y2="468" stroke="#E8E7E2" stroke-width="1"/>
+
+  <!-- Ports -->
+  <path class="box" d="M 830 240 L 940 240 L 950 230 L 960 240 L 960 340 L 830 340 Z" />
+  <text class="t-package" x="850" y="260">Ports</text>
+
+  <rect class="box" x="850" y="275" width="90" height="55" rx="4"/>
+  <text class="t-normal" x="895" y="298" text-anchor="middle">Data and</text>
+  <text class="t-normal" x="895" y="316" text-anchor="middle">integration</text>
+  <text class="t-normal" x="895" y="328" text-anchor="middle" font-size="10">contracts / DAO</text>
+
+  <!-- Adapters -->
+  <path class="box" d="M 830 60 L 940 60 L 950 50 L 960 60 L 960 200 L 830 200 Z" />
+  <text class="t-package" x="850" y="80">Adapters</text>
+
+  <rect class="box" x="850" y="100" width="90" height="80" rx="4"/>
+  <text class="t-normal" x="895" y="125" text-anchor="middle">Relational</text>
+  <text class="t-normal" x="895" y="143" text-anchor="middle">persistence</text>
+  <text class="t-normal" x="895" y="163" text-anchor="middle" font-size="10">DAO.Sql</text>
+  <text class="t-normal" x="895" y="177" text-anchor="middle" font-size="10">EF Core</text>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="180" y1="210" x2="180" y2="270" marker-end="url(#arr)"/>
+  <path class="arrow" d="M 275 170 L 895 275" marker-end="url(#arr)"/>
+  <line class="arrow" x1="275" y1="303" x2="290" y2="303" marker-end="url(#arr)"/>
+  <path class="arrow" d="M 275 315 Q 500 380 895 305" marker-end="url(#arr)"/>
+  <path class="arrow" d="M 155 460 Q 130 380 155 335" marker-end="url(#arr)"/>
+  <line class="arrow" x1="895" y1="200" x2="895" y2="270" marker-end="url(#arr)"/>
+</svg>

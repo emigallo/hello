@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emiliano Gallo</title>
+  <meta name="description"
+    content="Three diagrams and notes on a business platform I designed and evolved as end-to-end technical lead.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Systems I designed and kept alive.</h1>
+      <p class="subtitle">Three diagrams and notes on a business platform I evolved as end-to-end technical lead over
+        the past few years.</p>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="container">
+      <p>The material is organized from the outside in: first the deployment ecosystem, then the internal architecture
+        of the business core, and finally the continuous delivery process that supports the system's evolution.</p>
+    </div>
+  </div>
+
+  <!-- ===================== DIAGRAM 1: DEPLOYMENT VIEW ===================== -->
+  <section class="diagram-section" id="diagram-1">
+    <div class="container">
+      <span class="section-number">01 — Deployment view</span>
+      <h2>The platform's physical ecosystem.</h2>
+
+      <div class="section-body">
+        <p>Four delivery channels coexist over a single business logic core: a mobile app for field logistics, a desktop
+          client for administration, a REST API for external integrations, and batch processes for scheduled
+          synchronization jobs.</p>
+        <div class="diagram-frame">
+          <img src="/files/1-deployment-view.svg" />
+        </div>
+        <p>Convergence on the <span class="highlight">shared business core</span> guarantees functional consistency
+          across channels without duplicating logic. The integration with the external ERP is encapsulated in a
+          dedicated service, which isolates the rest of the system from the legacy's technical constraints.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIAGRAM 2: INTERNAL ARCHITECTURE ===================== -->
+  <section class="diagram-section" id="diagram-2">
+    <div class="container">
+      <span class="section-number">02 — Internal architecture</span>
+      <h2>Inside the shared core.</h2>
+
+      <div class="section-body">
+        <p>The core that appears as a black box in the previous diagram follows Clean Architecture principles, with
+          strict layer separation and dependencies pointing toward the domain.</p>
+
+        <div class="diagram-frame">
+          <img src="/files/2-shared-business-core.svg" />
+        </div>
+
+        <p>The <span class="highlight">Use cases</span> layer orchestrates the interaction between the outside world and
+          the domain. The <span class="highlight">Domain</span> layer holds the business rules and knows nothing about
+          the database or the frameworks. <span class="highlight">Cross-cutting</span> groups the transversal utilities
+          used across inner layers. External adapters are only reached through <span class="highlight">Ports</span>
+          defined by the domain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIAGRAM 3: DELIVERY PIPELINE ===================== -->
+  <section class="diagram-section" id="diagram-3">
+    <div class="container">
+      <span class="section-number">03 — Delivery pipeline</span>
+      <h2>The process that sustains evolution.</h2>
+
+      <div class="section-body">
+        <p>The pipeline follows the continuous delivery approach. Every change goes
+          through three stages before reaching production.</p>
+
+        <div class="diagram-frame">
+          <img src="/files/3-delivery-pipeline.svg" />
+        </div>
+
+        <p>The <span class="highlight">Commit stage</span> runs fast validations on every push. The <span
+            class="highlight">Acceptance stage</span> builds the different artifacts in parallel, runs acceptance and
+          integration tests, and deploys to QA. The transition to production is done by <span class="highlight">manual
+            promotion of the same already-validated artifact</span> — nothing gets recompiled.</p>
+
+        <div class="callout">
+          <div class="callout-label">Measurable outcome</div>
+          <div class="callout-content">We went from one deployment per week to several per week, with measurable
+            stability on each release.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="diagram-section" id="diagram-4">
+    <div class="container">
+      <span class="section-number">04 — Delivery process outcomes</span>
+      <h2>What all of this actually produced.</h2>
+
+      <div class="section-body">
+        <p>The architecture, the internal design, and the pipeline are means, not ends. Below is what changed in the
+          day-to-day of the platform after a year of applying these decisions.</p>
+
+        <div class="diagram-frame">
+          <img src="files/4-delivery-outcomes.svg"
+            alt="Delivery process outcomes: deployment frequency, bug rate reduction, and deployment stability">
+        </div>
+
+        <p>These outcomes align with the delivery performance dimension of the <span class="highlight">DORA
+            framework</span> — the same framework the course linked below explores in more depth.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-label">Related material</div>
+      <h3>A self-authored course on Continuous Integration and Delivery.</h3>
+      <p>I turned the delivery process behind diagram 03 into an open course with public material, for anyone wanting to
+        go deeper into CD practices.</p>
+
+      <div class="link-row">
+        <a href="https://github.com/emigallo-edu/entrega-continua" target="_blank"
+          rel="noopener">github.com/emigallo-edu/entrega-continua</a>
+        <a href="https://www.linkedin.com/in/emiliano-gallo" target="_blank"
+          rel="noopener">linkedin.com/in/emiliano-gallo</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
